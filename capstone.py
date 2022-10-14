@@ -109,6 +109,6 @@ hide_jawa_data_row_index = """
             </style>
             """
 st.markdown(hide_jawa_data_row_index, unsafe_allow_html=True)
-jawa_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=False)
+jawa_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 st.sidebar.table(jawa_data)
 
