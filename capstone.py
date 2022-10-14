@@ -13,8 +13,7 @@ st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan 
            " Tuberkulosis (TBC/TB) sendiri adalah penyakit mudah menular yang disebabkan oleh infeksi bakteri, yang pada umumnya menyerang paru-paru.")
 
 #image
-image = image.open('./Java_blank_map.jpg')
-st.image(image)
+st.image('./Java_blank_map.jpg')
 
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
