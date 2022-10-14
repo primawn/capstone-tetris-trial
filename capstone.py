@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as mp
-
-pip install tabulate
+from tabulate import tabulate
 
 #STREAMLIT
 st.set_page_config(layout="wide")
