@@ -91,10 +91,17 @@ sum_dm_jatim = jatim_data['Jumlah Penderita DM'].sum()
 sum_tb_jatim = jatim_data['Jumlah Penderita TB'].sum()
 
 datajawa = {'Provinsi':['DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'], 'Penderita Tuberkulosis':[sum_tb_jkt,sum_tb_btn,sum_tb_diy,sum_tb_jabar,sum_tb_jateng,sum_tb_jatim], 'Penderita Diabetes':[sum_dm_jkt,sum_dm_btn,sum_dm_diy,sum_dm_jabar,sum_dm_jateng,sum_dm_jatim]}
+hide_datajawa_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
+st.dataframe(datajawa)
 st.table(datajawa)
 
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
-st.sidebar.altair_chart(jawa_data)
