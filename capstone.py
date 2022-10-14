@@ -15,5 +15,10 @@ st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan 
 #image
 st.image('./Java_blank_map.jpg')
 
+#Bring in the data
+data = pd.read_csv('DI_Yogya.csv')
+st.write("## THE DATA BEING USED")
+data
+
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
