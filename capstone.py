@@ -20,6 +20,5 @@ st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pula
 
 datadiy = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
 datadiy = datadiy.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
-st.write("## THE DATA BEING USED")
-data
+
 st.sidebar.altair_chart(datadiy)
