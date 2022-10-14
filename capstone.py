@@ -98,8 +98,10 @@ hide_datajawa_row_index = """
             </style>
             """
 st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
-
 st.table(datajawa)
+
+from matplotlib import pyplot as plt
+from matplotlib.pyplot import figure
 
 
 #SIDEBAR
