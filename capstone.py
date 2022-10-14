@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-$ pip install streamlit --upgrade
+pip install streamlit --upgrade
 
 st.set_page_config(layout="wide")
 #Create header
