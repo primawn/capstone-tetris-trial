@@ -17,6 +17,7 @@ st.image('./Java_blank_map.jpg')
 
 #Bring in the data
 data = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
+data = data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
 st.write("## THE DATA BEING USED")
 data
 
