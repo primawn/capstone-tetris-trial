@@ -3,9 +3,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as mp
 import tabulate
+import altair as alt
+import pydeck as pdk
 
 #STREAMLIT
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020")
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
 st.write("Prima Widiani | Tetris Program 2022")
@@ -112,8 +114,8 @@ st.bar_chart(jatim_data)
 st.write("## Data Penderita TB dan DM di Jawa 2020")
 
 
-chart = alt.Chart(jawa_data[:20]).mark_bar().encode(
-    x=alt.X("Kabupaten/Kota"),
+chart = alt.Chart(jawa_data[:119]).mark_bar().encode(
+    x=alt.X('Kabupaten/Kota'),
     y=alt.Y('Name', sort='-x'),
     opacity=alt.value(1),
 color=alt.condition(
