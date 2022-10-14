@@ -65,7 +65,41 @@ jawa_3 = jawa_2.append(jabar_data)
 jawa_4 = jawa_3.append(jateng_data)
 jawa_data = jawa_4.append(jatim_data)
 
+##SUM
+# JKT
+sum_dm_jkt = jkt_data['Jumlah Penderita DM'].sum()
+sum_tb_jkt = jkt_data['Jumlah Penderita TB'].sum()
 
+# Banten
+sum_dm_btn = banten_data['Jumlah Penderita DM'].sum()
+sum_tb_btn = banten_data['Jumlah Penderita TB'].sum()
+
+# DIY
+sum_dm_diy = diy_data['Jumlah Penderita DM'].sum()
+sum_tb_diy = diy_data['Jumlah Penderita TB'].sum()
+
+# Jabar
+sum_dm_jabar = jabar_data['Jumlah Penderita DM'].sum()
+sum_tb_jabar = jabar_data['Jumlah Penderita TB'].sum()
+
+# Jateng
+sum_dm_jateng = jateng_data['Jumlah Penderita DM'].sum()
+sum_tb_jateng = jateng_data['Jumlah Penderita TB'].sum()
+
+# Jatim
+sum_dm_jatim = jatim_data['Jumlah Penderita DM'].sum()
+sum_tb_jatim = jatim_data['Jumlah Penderita TB'].sum()
+
+datajawa1 = [ 
+    ['DKI Jakarta', sum_tb_jkt, sum_dm_jkt], 
+    ['Banten', sum_tb_btn, sum_dm_btn], 
+    ['DI Yogyakarta', sum_tb_diy, sum_dm_diy],
+    ['Jawa Barat', sum_tb_jabar, sum_dm_jabar],
+    ['Jawa Tengah', sum_tb_jateng, sum_dm_jateng],
+    ['Jawa Timur', sum_tb_jatim, sum_dm_jatim]]
+head = ['Provinsi', 'Penderita TB', 'Penderita DM']
+
+print(tabulate(datajawa1, headers=['Provinsi', 'Penderita TB', 'Penderita DM'], tablefmt="grid"))
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
