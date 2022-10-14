@@ -16,7 +16,7 @@ st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan 
 st.image('./Java_blank_map.jpg')
 
 #Bring in the data
-data = pd.read_csv('DI_Yogya.csv')
+data = pd.read_csv('./Capstone Project/DI_Yogya.csv')
 st.write("## THE DATA BEING USED")
 data
 
