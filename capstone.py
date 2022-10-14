@@ -7,7 +7,6 @@ import altair as alt
 import pydeck as pdk
 
 #STREAMLIT
-st.set_page_config(layout="wide", page_title="Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020")
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
 st.write("Prima Widiani | Tetris Program 2022")
@@ -139,7 +138,7 @@ text = chart.mark_text(
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
-
+st.sidebar('Hit me')
 hide_jawa_data_row_index = """
             <style>
             .row_heading.level0 {display:none}
