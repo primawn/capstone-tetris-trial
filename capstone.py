@@ -108,7 +108,7 @@ df = pd.DataFrame(datajatim, columns=["Kabupaten/Kota", "Jumlah Penderita TB", "
 df.plot(x="Kabupaten/Kota", y=["Jumlah Penderita TB", "Jumlah Penderita DM"], kind="bar", figsize=(20, 15))
  
 # print bar graph
-mp.show()
+st.bar_chart(df)
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
