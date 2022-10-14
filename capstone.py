@@ -64,6 +64,7 @@ jawa_2 = jawa_1.append(banten_data)
 jawa_3 = jawa_2.append(jabar_data)
 jawa_4 = jawa_3.append(jateng_data)
 jawa_data = jawa_4.append(jatim_data)
+jawa_data
 
 ##SUM
 # JKT
@@ -100,15 +101,38 @@ from matplotlib import pyplot as plt
 from matplotlib.pyplot import figure
 # take data
 datajatim = jatim_data
- 
- 
 df = pd.DataFrame(datajatim, columns=["Kabupaten/Kota", "Jumlah Penderita TB", "Jumlah Penderita DM"])
- 
 # plot the dataframe
 df.plot(x="Kabupaten/Kota", y=["Jumlah Penderita TB", "Jumlah Penderita DM"], kind="bar", figsize=(20, 15))
- 
 # print bar graph
 st.bar_chart(jatim_data)
+
+
+# create bar chart
+st.write("## Data Penderita TB dan DM di Jawa 2020")
+
+
+chart = alt.Chart(jawa_data[:20]).mark_bar().encode(
+    x=alt.X("Kabupaten/Kota"),
+    y=alt.Y('Name', sort='-x'),
+    opacity=alt.value(1),
+color=alt.condition(
+    alt.datum.Name == df_results2['Name'][0],  # If it's the top ranked prediction
+        alt.value('#f63366'),     #  sets the bar to the streamlit pink.
+        alt.value('grey')  ) # else this colour
+).properties(
+    width=380
+)
+
+
+text = chart.mark_text(
+    align='left',
+    baseline='middle',
+    dx=3  # Nudges text to right so it doesn't appear on top of the bar
+).encode(
+    text=alt.Text('prediction', format=',.2r')
+)
+
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
