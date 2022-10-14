@@ -1,6 +1,8 @@
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 
+import streamlit as st
+
 ##STREAMLIT
 st.title("Prevalensi TBC Terhadap Penderita Diabetes di Pulau Jawa Pada 2020")
 st.caption("Prima Widiani - TETRIS Program 2022")
