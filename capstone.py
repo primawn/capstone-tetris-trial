@@ -69,27 +69,22 @@ jawa_data = jawa_4.append(jatim_data)
 # JKT
 sum_dm_jkt = jkt_data['Jumlah Penderita DM'].sum()
 sum_tb_jkt = jkt_data['Jumlah Penderita TB'].sum()
-
 # Banten
 sum_dm_btn = banten_data['Jumlah Penderita DM'].sum()
 sum_tb_btn = banten_data['Jumlah Penderita TB'].sum()
-
 # DIY
 sum_dm_diy = diy_data['Jumlah Penderita DM'].sum()
 sum_tb_diy = diy_data['Jumlah Penderita TB'].sum()
-
 # Jabar
 sum_dm_jabar = jabar_data['Jumlah Penderita DM'].sum()
 sum_tb_jabar = jabar_data['Jumlah Penderita TB'].sum()
-
 # Jateng
 sum_dm_jateng = jateng_data['Jumlah Penderita DM'].sum()
 sum_tb_jateng = jateng_data['Jumlah Penderita TB'].sum()
-
 # Jatim
 sum_dm_jatim = jatim_data['Jumlah Penderita DM'].sum()
 sum_tb_jatim = jatim_data['Jumlah Penderita TB'].sum()
-
+# Tabel per provinsi
 datajawa = {'Provinsi':['DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'], 'Penderita Tuberkulosis':[sum_tb_jkt,sum_tb_btn,sum_tb_diy,sum_tb_jabar,sum_tb_jateng,sum_tb_jatim], 'Penderita Diabetes':[sum_dm_jkt,sum_dm_btn,sum_dm_diy,sum_dm_jabar,sum_dm_jateng,sum_dm_jatim]}
 hide_datajawa_row_index = """
             <style>
@@ -100,9 +95,20 @@ hide_datajawa_row_index = """
 st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
 st.table(datajawa)
 
+
 from matplotlib import pyplot as plt
 from matplotlib.pyplot import figure
-
+# take data
+datajatim = jatim_data
+ 
+ 
+df = pd.DataFrame(datajatim, columns=["Kabupaten/Kota", "Jumlah Penderita TB", "Jumlah Penderita DM"])
+ 
+# plot the dataframe
+df.plot(x="Kabupaten/Kota", y=["Jumlah Penderita TB", "Jumlah Penderita DM"], kind="bar", figsize=(20, 15))
+ 
+# print bar graph
+mp.show()
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
