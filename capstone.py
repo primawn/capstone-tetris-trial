@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as mp
 
+pip install tabulate
+
 #STREAMLIT
 st.set_page_config(layout="wide")
 #Create header
@@ -64,6 +66,8 @@ jawa_3 = jawa_2.append(jabar_data)
 jawa_4 = jawa_3.append(jateng_data)
 jawa_data = jawa_4.append(jatim_data)
 
+
+#SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
 st.sidebar.altair_chart(jawa_data)
