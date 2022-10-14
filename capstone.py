@@ -28,7 +28,7 @@ jkt_dm1 = jkt_dm.drop(labels=['Puskesmas'], axis=1)
 jkt_dm1 = jkt_dm1.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Jumlah_Penderita_DM':'Jumlah Penderita DM'})
 
 jkt_data = pd.merge(jkt_tb1,jkt_dm1)
-jkt_data
+
 
 ##DIY
 diy_data = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
@@ -39,11 +39,13 @@ banten_dm = pd.read_csv('./Capstone Project/DM_Banten.csv', sep=',')
 banten_dm = banten_dm.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Jumlah_Penderita_DM':'Jumlah Penderita DM'})
 banten_dm = banten_dm.drop(labels=['Puskesmas'], axis=1)
 
-
+banten_tb = pd.read_csv('./Capstone Project/TB_Banten.csv', sep=',')
+banten_tb = banten_tb.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Total_Penderita':'Jumlah Penderita TB'})
+banten_tb = banten_tb.drop(labels=['Puskesmas','Penderita_Laki','Penderita_Perempuan'], axis=1)
 
 
 
 
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
-st.sidebar.altair_chart(datadiy)
+st.sidebar.altair_chart(jkt_data)
