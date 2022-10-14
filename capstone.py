@@ -101,7 +101,7 @@ st.table(datajawa)
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
-st.sidebar('Hit me')
+st.sidebar.button('Hit me')
 hide_jawa_data_row_index = """
             <style>
             .row_heading.level0 {display:none}
