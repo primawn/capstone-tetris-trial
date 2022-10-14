@@ -48,6 +48,21 @@ jabar_tb = jabar_tb.rename(columns={'Kecamatan_Kota':'Kabupaten/Kota','Total_Pen
 jabar_tb = jabar_tb.drop(labels=['Penderita_Laki','Penderita_Perempuan'], axis=1)
 jabar_data = pd.merge(jabar_tb,jabar_dm)
 
+##JATIM
+jatim_data = pd.read_csv('./Capstone Project/Jawa_Timur.csv', sep=';')
+jatim_data = jatim_data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
+
+##JATENG
+jateng_data = pd.read_csv('./Capstone Project/Jawa_Tengah.csv', sep=';')
+jateng_data = jateng_data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
+
+##MERGED
+jawa_1 = jkt_data.append(diy_data)
+jawa_2 = jawa_1.append(banten_data)
+jawa_3 = jawa_2.append(jabar_data)
+jawa_4 = jawa_3.append(jateng_data)
+jawa_data = jawa_4.append(jatim_data)
+
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
-st.sidebar.altair_chart(jkt_data)
+st.sidebar.altair_chart(jawa_data)
