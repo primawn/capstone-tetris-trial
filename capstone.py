@@ -99,7 +99,7 @@ hide_datajawa_row_index = """
             """
 st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
 st.dataframe(datajawa)
-st.table(datajawa)
+
 
 
 #SIDEBAR
