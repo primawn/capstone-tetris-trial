@@ -96,16 +96,6 @@ st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
 st.table(datajawa)
 
 
-from matplotlib import pyplot as plt
-from matplotlib.pyplot import figure
-# take data
-datajatim = jatim_data
-df = pd.DataFrame(datajatim, columns=["Kabupaten/Kota", "Jumlah Penderita TB", "Jumlah Penderita DM"])
-# plot the dataframe
-df.plot(x="Kabupaten/Kota", y=["Jumlah Penderita TB", "Jumlah Penderita DM"], kind="bar", figsize=(20, 15))
-# print bar graph
-st.bar_chart(jatim_data)
-
 
 
 #SIDEBAR
