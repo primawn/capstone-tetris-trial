@@ -1,6 +1,8 @@
 pip install -r requirements.txt
 
-install streamlit as st
+import streamlit as st
+import pandas as pd
+import numpy as np
 
 ##STREAMLIT
 st.title("Prevalensi TBC Terhadap Penderita Diabetes di Pulau Jawa Pada 2020")
