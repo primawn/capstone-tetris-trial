@@ -1,8 +1,8 @@
 streamlit
 pandas
 numpy
-matplotlib.pyplot
+matplotlib
 seaborn
-sklearn.cluster
+sklearn
 numpy
 pytest
