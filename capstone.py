@@ -137,7 +137,7 @@ text = chart.mark_text(
 
 
 #SIDEBAR
-with st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
+st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
 
 hide_jawa_data_row_index = """
@@ -147,4 +147,4 @@ hide_jawa_data_row_index = """
             </style>
             """
 st.markdown(hide_jawa_data_row_index, unsafe_allow_html=True)
-st.table(jawa_data)
+st.sidebar.table(jawa_data)
