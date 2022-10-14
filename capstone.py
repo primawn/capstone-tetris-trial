@@ -22,13 +22,10 @@ st.image('./Java_blank_map.jpg')
 jkt_tb = pd.read_csv('./Capstone Project/TB_DKI_Jakarta.csv')
 jkt_tb1 = jkt_tb.drop(labels=['Puskesmas', 'Penderita_Laki','Penderita_Perempuan'], axis=1)
 jkt_tb1 = jkt_tb1.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Total_Penderita':'Jumlah Penderita TB'})
-
 jkt_dm = pd.read_csv('./Capstone Project/DM_DKI_Jakarta.csv')
 jkt_dm1 = jkt_dm.drop(labels=['Puskesmas'], axis=1)
 jkt_dm1 = jkt_dm1.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Jumlah_Penderita_DM':'Jumlah Penderita DM'})
-
 jkt_data = pd.merge(jkt_tb1,jkt_dm1)
-
 
 ##DIY
 diy_data = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
@@ -38,13 +35,18 @@ diy_data = diy_data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Juml
 banten_dm = pd.read_csv('./Capstone Project/DM_Banten.csv', sep=',')
 banten_dm = banten_dm.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Jumlah_Penderita_DM':'Jumlah Penderita DM'})
 banten_dm = banten_dm.drop(labels=['Puskesmas'], axis=1)
-
 banten_tb = pd.read_csv('./Capstone Project/TB_Banten.csv', sep=',')
 banten_tb = banten_tb.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Total_Penderita':'Jumlah Penderita TB'})
 banten_tb = banten_tb.drop(labels=['Puskesmas','Penderita_Laki','Penderita_Perempuan'], axis=1)
+banten_data = pd.merge(banten_tb,banten_dm)
 
-
-
+##JABAR
+jabar_dm = pd.read_csv('./Capstone Project/DM_Jawa_Barat.csv', sep=';')
+jabar_dm = jabar_dm.rename(columns={'Kecamatan_Kota':'Kabupaten/Kota','Jumlah_Penderita_DM':'Jumlah Penderita DM'})
+jabar_tb = pd.read_csv('./Capstone Project/TB_Jawa_Barat.csv', sep=';')
+jabar_tb = jabar_tb.rename(columns={'Kecamatan_Kota':'Kabupaten/Kota','Total_Penderita':'Jumlah Penderita TB'})
+jabar_tb = jabar_tb.drop(labels=['Penderita_Laki','Penderita_Perempuan'], axis=1)
+jabar_data = pd.merge(jabar_tb,jabar_dm)
 
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
