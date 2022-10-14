@@ -90,16 +90,10 @@ sum_tb_jateng = jateng_data['Jumlah Penderita TB'].sum()
 sum_dm_jatim = jatim_data['Jumlah Penderita DM'].sum()
 sum_tb_jatim = jatim_data['Jumlah Penderita TB'].sum()
 
-datajawa1 = [ 
-    ['DKI Jakarta', sum_tb_jkt, sum_dm_jkt], 
-    ['Banten', sum_tb_btn, sum_dm_btn], 
-    ['DI Yogyakarta', sum_tb_diy, sum_dm_diy],
-    ['Jawa Barat', sum_tb_jabar, sum_dm_jabar],
-    ['Jawa Tengah', sum_tb_jateng, sum_dm_jateng],
-    ['Jawa Timur', sum_tb_jatim, sum_dm_jatim]]
-head = ['Provinsi', 'Penderita TB', 'Penderita DM']
+datajawa = {'Provinsi':['DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'], 'Penderita Tuberkulosis':[sum_tb_jkt,sum_tb_btn,sum_tb_diy,sum_tb_jabar,sum_tb_jateng,sum_tb_jatim], 'Penderita Diabetes':[sum_dm_jkt,sum_dm_btn,sum_dm_diy,sum_dm_jabar,sum_dm_jateng,sum_dm_jatim]}
+print(tabulate(datajawa, headers='keys', tablefmt="grid"))
 
-print(tabulate(datajawa1, headers=['Provinsi', 'Penderita TB', 'Penderita DM'], tablefmt="grid"))
+
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
