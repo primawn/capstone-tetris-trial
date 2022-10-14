@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 
 ##STREAMLIT
+st.set_page_config(layout="wide")
 st.title("Prevalensi TBC Terhadap Penderita Diabetes di Pulau Jawa Pada 2020")
 st.caption("Prima Widiani - TETRIS Program 2022")
 
