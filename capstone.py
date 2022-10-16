@@ -34,11 +34,17 @@ hide_jkt_data_row_index = """
             </style>
             """
 st.markdown(hide_jkt_data_row_index, unsafe_allow_html=True)
-st.table(jkt_data)
 
 ##DIY
 diy_data = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
 diy_data = diy_data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
+hide_diy_data_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_diy_data_row_index, unsafe_allow_html=True)
 
 ##BANTEN
 banten_dm = pd.read_csv('./Capstone Project/DM_Banten.csv', sep=',')
@@ -48,6 +54,13 @@ banten_tb = pd.read_csv('./Capstone Project/TB_Banten.csv', sep=',')
 banten_tb = banten_tb.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Total_Penderita':'Jumlah Penderita TB'})
 banten_tb = banten_tb.drop(labels=['Puskesmas','Penderita_Laki','Penderita_Perempuan'], axis=1)
 banten_data = pd.merge(banten_tb,banten_dm)
+hide_banten_data_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_banten_data_row_index, unsafe_allow_html=True)
 
 ##JABAR
 jabar_dm = pd.read_csv('./Capstone Project/DM_Jawa_Barat.csv', sep=';')
@@ -56,14 +69,35 @@ jabar_tb = pd.read_csv('./Capstone Project/TB_Jawa_Barat.csv', sep=';')
 jabar_tb = jabar_tb.rename(columns={'Kecamatan_Kota':'Kabupaten/Kota','Total_Penderita':'Jumlah Penderita TB'})
 jabar_tb = jabar_tb.drop(labels=['Penderita_Laki','Penderita_Perempuan'], axis=1)
 jabar_data = pd.merge(jabar_tb,jabar_dm)
+hide_jabar_data_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_jabar_data_row_index, unsafe_allow_html=True)
 
 ##JATIM
 jatim_data = pd.read_csv('./Capstone Project/Jawa_Timur.csv', sep=';')
 jatim_data = jatim_data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
+hide_jatim_data_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_jatim_data_row_index, unsafe_allow_html=True)
 
 ##JATENG
 jateng_data = pd.read_csv('./Capstone Project/Jawa_Tengah.csv', sep=';')
 jateng_data = jateng_data.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','TB':'Jumlah Penderita TB','DM':'Jumlah Penderita DM'})
+hide_jateng_data_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_jateng_data_row_index, unsafe_allow_html=True)
 
 ##MERGED
 jawa_1 = jkt_data.append(diy_data)
@@ -119,3 +153,13 @@ st.sidebar.write('Data penderita DM dan TB di', choice_prov)
 
 if choice_prov == "DKI Jakarta":
          st.sidebar.table(jkt_data)
+if choice_prov == "Banten":
+         st.sidebar.table(banten_data)
+if choice_prov == "DI Yogyakarta":
+         st.sidebar.table(diy_data)
+if choice_prov == "Jawa Barat":
+         st.sidebar.table(jabar_data)
+if choice_prov == "Jawa Tengah":
+         st.sidebar.table(jateng_data)
+if choice_prov == "Jawa Timur":
+         st.sidebar.table(jatim_data)
