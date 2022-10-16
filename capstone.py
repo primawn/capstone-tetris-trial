@@ -148,7 +148,7 @@ choice_prov = st.sidebar.selectbox(
     ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
 if choice_prov == "DKI Jakarta":
-         st.sidebar.table(jkt_data)
+         st.sidebar.table(jkt_data, ascending=True)
 if choice_prov == "Banten":
          st.sidebar.table(banten_data)
 if choice_prov == "DI Yogyakarta":
