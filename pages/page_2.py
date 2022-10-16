@@ -1,3 +1,4 @@
+import pandas as pd
 
 choice_prov = st.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
