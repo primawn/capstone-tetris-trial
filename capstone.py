@@ -182,17 +182,17 @@ elif page == "Data per Provinsi":
 elif page == "Horizontal Bar Graph":
     horizontal_bar_graph()
 
-    #Fourth Page
-    elif page == "Scatter Plot":
-        scatter_plot()
+#Fourth Page
+elif page == "Scatter Plot":
+    scatter_plot()
     
-    #Fifth page
-    elif page == "Histogram":
-        histogram()
+#Fifth page
+elif page == "Histogram":
+    histogram()
     
-    #Sixth Page
-    elif page == "Pie Chart":
-        pieChart()
+#Sixth Page
+elif page == "Pie Chart":
+    pieChart()
 
-    elif page == "Sub Plot":
-        subPlot()
+elif page == "Sub Plot":
+    subPlot()
