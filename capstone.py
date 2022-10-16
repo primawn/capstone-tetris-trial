@@ -141,15 +141,14 @@ st.table(datajawa)
 
 
 #SIDEBAR
-st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 
 #adding a selectbox
 choice_prov = st.sidebar.selectbox(
-    'Data Penderita Diabetes Melitus dan TBC per Provinsi',
+    'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
     ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
 #displaying the selected option
-st.sidebar.caption('Data penderita DM dan TB di', choice_prov)
+st.sidebar.write('Jumlah penderita DM dan TB di', choice_prov)
 
 if choice_prov == "DKI Jakarta":
          st.sidebar.table(jkt_data)
