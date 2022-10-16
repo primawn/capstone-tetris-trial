@@ -156,32 +156,31 @@ def main():
     )
 
 #First Page
-    if page == "Homepage":
-        homepage()
+if page == "Homepage":
+    homepage()
 
-    #Second Page
-    elif page == "Data per Provinsi":
-        choice_prov = st.sidebar.selectbox(
-		'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
-		('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
-	if choice_prov == "DKI Jakarta":
-        	st.table(jkt_data)
-	if choice_prov == "Banten":
-         	st.table(banten_data)
-	if choice_prov == "DI Yogyakarta":
-         	st.table(diy_data)
-	if choice_prov == "Jawa Barat":
-         	st.table(jabar_data)
-	if choice_prov == "Jawa Tengah":
-         	st.table(jateng_data)
-	if choice_prov == "Jawa Timur":
-         	st.table(jatim_data)
-         
-st.sidebar.caption("(Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa)")
+#Second Page
+elif page == "Data per Provinsi":
+    choice_prov = st.sidebar.selectbox(
+	'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
+	('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
+    if choice_prov == "DKI Jakarta":
+        st.table(jkt_data)
+    if choice_prov == "Banten":
+         st.table(banten_data)
+    if choice_prov == "DI Yogyakarta":
+         st.table(diy_data)
+    if choice_prov == "Jawa Barat":
+         st.table(jabar_data)
+    if choice_prov == "Jawa Tengah":
+         st.table(jateng_data)
+    if choice_prov == "Jawa Timur":
+         st.table(jatim_data)
+    st.sidebar.caption("(Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa)")
     
-    #Third Page
-    elif page == "Horizontal Bar Graph":
-        horizontal_bar_graph()
+#Third Page
+elif page == "Horizontal Bar Graph":
+    horizontal_bar_graph()
 
     #Fourth Page
     elif page == "Scatter Plot":
