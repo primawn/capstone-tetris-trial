@@ -103,16 +103,7 @@ hide_datajawa_row_index = """
 st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
 st.table(datajawa)
 
-#adding a selectbox
-choice_prov = st.selectbox(
-    'Cek data penderita DM dan TB',
-    ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
-#displaying the selected option
-st.write('Data penderita DM dan TB di', choice_prov)
-
-if choice_prov == "DKI Jakarta":
-         st.table(jkt_data)
 
 
 #SIDEBAR
@@ -128,4 +119,13 @@ hide_jawa_data_row_index = """
 st.markdown(hide_jawa_data_row_index, unsafe_allow_html=True)
 jawa_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 st.sidebar.table(jawa_data)
+#adding a selectbox
+choice_prov = st.sidebar.selectbox(
+    'Cek data penderita DM dan TB',
+    ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
+#displaying the selected option
+st.sidebar.write('Data penderita DM dan TB di', choice_prov)
+
+if choice_prov == "DKI Jakarta":
+         st.sidebar.table(jkt_data)
