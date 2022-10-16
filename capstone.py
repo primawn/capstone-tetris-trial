@@ -113,7 +113,7 @@ st.write('Data penderita DM dan TB di', choice_prov)
 
 hasil = st.write(choice_prov)
 
-if hasil is 'DKI Jakarta' :
+if hasil is ('DKI Jakarta') :
     st.table(jkt_data) #displayed when the button is clicked
 
 #SIDEBAR
