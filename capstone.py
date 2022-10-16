@@ -163,4 +163,4 @@ if choice_prov == "Jawa Tengah":
 if choice_prov == "Jawa Timur":
          st.sidebar.table(jatim_data)
          
-st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
+st.sidebar.caption("(Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa)")
