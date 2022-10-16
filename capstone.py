@@ -112,11 +112,9 @@ choice_prov = st.selectbox(
 st.write('Data penderita DM dan TB di', choice_prov)
 
 hasil = st.write('Data penderita DM dan TB di', choice_prov)
-if "DKI Jakarta" in hasil is True:
-         st.table(jkt_data)
+hasil
 
-if [hasil == "DKI Jakarta"]: 
-         st.table(jkt_data) #displayed when the button is clicked
+
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
