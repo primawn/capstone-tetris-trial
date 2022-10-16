@@ -138,6 +138,6 @@ st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
 st.table(datajawa)
 
 
-from data.py import *
+import data
 
 
