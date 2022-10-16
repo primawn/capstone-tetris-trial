@@ -111,7 +111,7 @@ choice_prov = st.selectbox(
 #displaying the selected option
 st.write('Data penderita DM dan TB di', choice_prov)
 
-hasil = st.write('Data penderita DM dan TB di', choice_prov)
+hasil = choice_prov
 hasil
 
 
