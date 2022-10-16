@@ -147,9 +147,6 @@ choice_prov = st.sidebar.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
     ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
-#displaying the selected option
-st.sidebar.write('Jumlah penderita DM dan TB di', choice_prov)
-
 if choice_prov == "DKI Jakarta":
          st.sidebar.table(jkt_data)
 if choice_prov == "Banten":
