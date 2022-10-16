@@ -111,7 +111,8 @@ choice_prov = st.selectbox(
 #displaying the selected option
 st.write('Data penderita DM dan TB di', choice_prov)
 
-
+if "DKI Jakarta" in hasil is True:
+         st.table(jkt_data)
 
 if [hasil == "DKI Jakarta"]: 
          st.table(jkt_data) #displayed when the button is clicked
