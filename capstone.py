@@ -114,7 +114,11 @@ st.write('Data penderita DM dan TB di', choice_prov)
 hasil = choice_prov
 hasil
 
+if choice_prov == "DKI Jakarta":
+         st.table(jkt_data)
 
+if [hasil == "DKI Jakarta"]: 
+         st.table(jkt_data) #displayed when the button is clicked
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
