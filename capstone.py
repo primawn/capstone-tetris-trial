@@ -109,16 +109,6 @@ st.table(datajawa)
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
 st.sidebar.caption("Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa")
-st.sidebar.button('Hit me')
-hide_jawa_data_row_index = """
-            <style>
-            .row_heading.level0 {display:none}
-            .blank {display:none}
-            </style>
-            """
-st.markdown(hide_jawa_data_row_index, unsafe_allow_html=True)
-jawa_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
-st.sidebar.table(jawa_data)
 #adding a selectbox
 choice_prov = st.sidebar.selectbox(
     'Cek data penderita DM dan TB',
