@@ -141,23 +141,59 @@ st.table(datajawa)
 
 
 #SIDEBAR
+def main():
+    page = st.sidebar.selectbox(
+        "Select a Page",
+        [
+            "Homepage",
+            "Data per Provinsi",
+            "Data total",
+            "Scatter Plot",
+            "Histogram",
+            "Pie Chart",
+            "Sub Plot"
+        ]
+    )
 
-#adding a selectbox
-choice_prov = st.sidebar.selectbox(
-    'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
-    ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
+#First Page
+    if page == "Homepage":
+        homepage()
 
-if choice_prov == "DKI Jakarta":
-         st.sidebar.table(jkt_data)
-if choice_prov == "Banten":
-         st.sidebar.table(banten_data)
-if choice_prov == "DI Yogyakarta":
-         st.sidebar.table(diy_data)
-if choice_prov == "Jawa Barat":
-         st.sidebar.table(jabar_data)
-if choice_prov == "Jawa Tengah":
-         st.sidebar.table(jateng_data)
-if choice_prov == "Jawa Timur":
-         st.sidebar.table(jatim_data)
+    #Second Page
+    elif page == "Data per Provinsi":
+        choice_prov = st.sidebar.selectbox(
+		'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
+		('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
+	if choice_prov == "DKI Jakarta":
+        	st.table(jkt_data)
+	if choice_prov == "Banten":
+         	st.table(banten_data)
+	if choice_prov == "DI Yogyakarta":
+         	st.table(diy_data)
+	if choice_prov == "Jawa Barat":
+         	st.table(jabar_data)
+	if choice_prov == "Jawa Tengah":
+         	st.table(jateng_data)
+	if choice_prov == "Jawa Timur":
+         	st.table(jatim_data)
          
 st.sidebar.caption("(Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa)")
+    
+    #Third Page
+    elif page == "Horizontal Bar Graph":
+        horizontal_bar_graph()
+
+    #Fourth Page
+    elif page == "Scatter Plot":
+        scatter_plot()
+    
+    #Fifth page
+    elif page == "Histogram":
+        histogram()
+    
+    #Sixth Page
+    elif page == "Pie Chart":
+        pieChart()
+
+    elif page == "Sub Plot":
+        subPlot()
