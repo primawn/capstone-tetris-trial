@@ -95,7 +95,17 @@ hide_datajawa_row_index = """
 st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
 st.table(datajawa)
 
+#adding a selectbox
 
+choice_prov = st.selectbox(
+
+    'Cek data penderita DM dan TB',
+
+    ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
+
+#displaying the selected option
+
+st.write('Data penderita DM dan TB pada:', choice_prov)
 
 
 #SIDEBAR
