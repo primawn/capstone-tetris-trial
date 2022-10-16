@@ -149,15 +149,21 @@ choice_prov = st.sidebar.selectbox(
 
 if choice_prov == "DKI Jakarta":
          st.sidebar.table(jkt_data)
+         jkt_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 if choice_prov == "Banten":
          st.sidebar.table(banten_data)
+         banten_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 if choice_prov == "DI Yogyakarta":
          st.sidebar.table(diy_data)
+         diy_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 if choice_prov == "Jawa Barat":
          st.sidebar.table(jabar_data)
+         jabar_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 if choice_prov == "Jawa Tengah":
          st.sidebar.table(jateng_data)
+         jateng_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 if choice_prov == "Jawa Timur":
          st.sidebar.table(jatim_data)
+         jatim_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
          
 st.sidebar.caption("(Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa)")
