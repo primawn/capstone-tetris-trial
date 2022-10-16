@@ -27,6 +27,14 @@ jkt_dm = pd.read_csv('./Capstone Project/DM_DKI_Jakarta.csv')
 jkt_dm1 = jkt_dm.drop(labels=['Puskesmas'], axis=1)
 jkt_dm1 = jkt_dm1.rename(columns={'Kabupaten_Kota':'Kabupaten/Kota','Jumlah_Penderita_DM':'Jumlah Penderita DM'})
 jkt_data = pd.merge(jkt_tb1,jkt_dm1)
+hide_jkt_data_row_index = """
+            <style>
+            .row_heading.level0 {display:none}
+            .blank {display:none}
+            </style>
+            """
+st.markdown(hide_jkt_data_row_index, unsafe_allow_html=True)
+st.table(jkt_data)
 
 ##DIY
 diy_data = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
@@ -105,8 +113,11 @@ choice_prov = st.selectbox(
 
 #displaying the selected option
 
-st.write('Data penderita DM dan TB pada:', choice_prov)
+st.write('Data penderita DM dan TB di:', choice_prov)
 
+if st.selectbox('Cek data penderita DM dan TB', ('DKI Jakarta')):
+
+    st.table(jkt_data) #displayed when the button is clicked
 
 #SIDEBAR
 st.sidebar.write("Data Penderita Diabetes Melitus dan TBC per Provinsi")
