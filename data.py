@@ -1,5 +1,4 @@
 import pandas as pd
-import streamlit as st
 
 #DATA
 ##JKT
@@ -83,11 +82,11 @@ hide_jateng_data_row_index = """
 # st.markdown(hide_jateng_data_row_index, unsafe_allow_html=True)
 
 ##MERGED
-jawa_1 = jkt_data.append(diy_data)
-jawa_2 = jawa_1.append(banten_data)
-jawa_3 = jawa_2.append(jabar_data)
-jawa_4 = jawa_3.append(jateng_data)
-jawa_data = jawa_4.append(jatim_data)
+jawa_1 = pd.concat([jkt_data, diy_data])
+jawa_2 = pd.concat([jawa_1, banten_data])
+jawa_3 = pd.concat([jawa_2, jabar_data])
+jawa_4 = pd.concat([jawa_3, jateng_data])
+jawa_data = pd.concat([jawa_4, jatim_data])
 jawa_data
 
 ##SUM

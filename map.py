@@ -4,8 +4,6 @@ import numpy as np
 import json
 from geopy.geocoders import Nominatim 
 import folium # map rendering library
-import altair as alt
-import matplotlib.pyplot as mp
 import data
 from streamlit_folium import folium_static 
 
@@ -37,10 +35,6 @@ centers = center()
 #showing the maps
 map_sby = folium.Map(tiles=add_select, location=[centers[0], centers[1]], zoom_start=6.5)
 
-# for idx in range(6):
-#    data_geo['features'][idx]['properties']['Penderita Tuberkulosis']= int(data_all['Penderita Tuberkulosis'][idx])
-#    data_geo['features'][idx]['properties']['Penderita Diabetes'] = int(data_all['Penderita Diabetes'][idx])
-
 def threshold(data):
    threshold_scale = np.linspace(data_all[dicts[data]].min(), data_all[dicts[data]].max(), 10, dtype=float)
    # change the numpy array to a list
@@ -59,9 +53,4 @@ def show_maps(data, threshold_scale):
                            legend_name=dicts[data],
                            highlight=True,
                            reset=True).add_to(map_sby)
-#    folium.LayerControl().add_to(map_sby)
-#    maps.geojson.add_child(folium.features.GeoJsonTooltip
-#                                 (fields=['Propinsi',data],
-#                                 aliases=['Provinsi: ', dicts[data]],
-#                                 labels=True))
    folium_static(map_sby)

@@ -1,8 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import tabulate
-import altair as alt
 import data
 import map
 
@@ -18,9 +15,6 @@ st.markdown("<h6 style='text-align: center;'>Persebaran "+map.select_data+" di P
 st.write("Hidup yang menjadi lebih mudah di kemajuan teknologi ini membuat kita seringkali menjadi lalai dalam menjaga gaya hidup dan pola makan. Menurut WHO, gaya hidup yang tidak baik tersebut merupakan salah satu pemicu diabetes melitus (Kemkes, 2018), yang mana sejauh ini penderita diabetes melitus semakin bertambah banyak.")
 st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan metabolisme kronis pada tubuh (WHO, 1999). Hal ini menyebabkan tingginya kadar gula darah, terganggunya produksi insulin dalam tubuh, dan seringkali juga memberikan peluang bagi penyakit lain untuk masuk ke tubuh kita, salah satunya adalah TBC. Tuberkulosis (TBC/TB) adalah penyakit mudah menular yang disebabkan oleh infeksi bakteri, yang pada umumnya menyerang paru-paru.")
 
-
-# df = pd.DataFrame(data.datajawa)
-# df = df.set_index('Provinsi')
 chart_data = pd.DataFrame(
     data.datajawa,
     columns=["Penderita Tuberkulosis", "Penderita Diabetes"],
@@ -32,48 +26,6 @@ st.markdown("<h6 style='text-align: center;'>Jumlah Penderita Tuberkulosis dan D
 
 st.write("Bila dilihat pada diagram batang di atas, maka hubungan antara data penderita kedua penyakit tersebut adalah tidak berhubungan.")
 st.write("Meskipun memiliki jumlah penderita Diabetes tertinggi, namun jumlah penderita Tuberkulosis di Jawa Barat masih lebih sedikit daripada di Jawa Tengah yang merupakan provinsi dengan jumlah penderita Tuberkulosis tertinggi di Pulau Jawa.")
-
-# data = pd.melt(chart_data.reset_index(), id_vars=["index"])
-# chart = (
-#     alt.Chart(data)
-#     .mark_bar()
-#     .encode(
-#         x=alt.X("value", type="quantitative", title=""),
-#         y=alt.Y("index", type="nominal", title=""),
-#         color=alt.Color("variable", type="nominal", title=""),
-#         order=alt.Order("variable", sort="descending"),
-#     )
-# )
-
-# st.altair_chart(chart, use_container_width=True)
-#image
-# st.image('./Java_blank_map.jpg')
-# st.write(data_all['Provinsi'])
-
-# st.table(data.datajawa)
-
-# #chart
-# alt.data_transformers.disable_max_rows()
-
-# np.random.seed(0)
-# data = pd.DataFrame({
-#     'Jumlah': pd.date_range('1990-01-01', freq='Y', periods=10),
-#     'FAO_yied': np.random.randn(10).cumsum(),
-#     'Simulation': np.random.randn(10).cumsum(),
-#     'Predicted': np.random.randn(10).cumsum()
-# })
-
-# # data_jawa = pd.melt(data, id_vars=['date'], value_vars=['FAO_yied', 'Predicted', 'Simulation'])
-# chart = alt.Chart(data.datajawa, title='Jumlah penderita DM dan TB di Pulau Jawa 2020 berdasarkan Provinsi').mark_bar(
-#     opacity=1,
-#     ).encode(
-#     column = alt.Column('date:O', spacing = 5, header = alt.Header(labelOrient = "bottom")),
-#     x =alt.X('Kabupaten/Kota', sort = ["Penderita Tuberkulosis", "Penderita Diabetes"],  axis=None),
-#     y =alt.Y('value:Q'),
-#     color= alt.Color('variable')
-# ).configure_view(stroke='transparent')
-
-# chart.display() 
 
 choice_prov = st.sidebar.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
