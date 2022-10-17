@@ -6,8 +6,6 @@ import altair as alt
 import data
 import map
 
-install -r ./requirements.txt
-
 #STREAMLIT
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")

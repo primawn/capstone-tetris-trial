@@ -6,3 +6,4 @@ matplotlib
 tabulate
 geopy
 folium
+streamlit-folium
