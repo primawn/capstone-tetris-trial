@@ -10,15 +10,15 @@ choice_prov = st.selectbox(
 if choice_prov == "DKI Jakarta":
          st.table(data.jkt_data)
 if choice_prov == "Banten":
-         st.table(banten_data)
+         st.table(data.banten_data)
 if choice_prov == "DI Yogyakarta":
-         st.table(diy_data)
+         st.table(data.diy_data)
 if choice_prov == "Jawa Barat":
-         st.table(jabar_data)
+         st.table(data.jabar_data)
 if choice_prov == "Jawa Tengah":
-         st.table(jateng_data)
+         st.table(data.jateng_data)
 if choice_prov == "Jawa Timur":
-         st.table(jatim_data)
+         st.table(data.jatim_data)
 
 hide_jkt_data_row_index = """
             <style>
