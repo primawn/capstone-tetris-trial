@@ -22,7 +22,6 @@ data_all['Provinsi'] = [x.upper() for x in data_all['Provinsi']]
 
 dicts = {"Penderita Tuberkulosis":'Penderita Tuberkulosis',
          "Penderita Diabetes": 'Penderita Diabetes'}
-         
 
 #for changing type of the maps
 add_select = st.sidebar.selectbox("Jenis Peta yang Ingin Anda Tampilkan?",("OpenStreetMap", "Stamen Terrain","Stamen Toner"))
