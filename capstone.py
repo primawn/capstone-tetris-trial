@@ -7,10 +7,29 @@ import matplotlib.pyplot as mp
 import data
 
 
-page_1 = open("pages/page_1.py")
-page_2 = open("pages/page_2.py")
+
 
 #STREAMLIT
+
+choice_prov = st.sidebar.selectbox(
+    'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
+    ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
+
+if choice_prov == "DKI Jakarta":
+         st.sidebar.table(data.jkt_data)
+if choice_prov == "Banten":
+         st.sidebar.table(data.banten_data)
+if choice_prov == "DI Yogyakarta":
+         st.sidebar.table(data.diy_data)
+if choice_prov == "Jawa Barat":
+         st.sidebar.table(data.jabar_data)
+if choice_prov == "Jawa Tengah":
+         st.sidebar.table(data.jateng_data)
+if choice_prov == "Jawa Timur":
+         st.sidebar.table(data.jatim_data)
+         
+st.sidebar.caption("(Data dihimpun dari website resmi Pemerintah Provinsi di pulau Jawa)")
+
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
 st.write("Prima Widiani | Tetris Program 2022")
