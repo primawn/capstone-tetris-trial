@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 
 choice_prov = st.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
