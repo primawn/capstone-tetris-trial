@@ -6,7 +6,7 @@ import altair as alt
 import data
 import map
 
-pip install -r ./requirements.txt
+install -r ./requirements.txt
 
 #STREAMLIT
 #Create header
