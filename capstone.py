@@ -36,7 +36,7 @@ def main():
     )
 
 #First Page
-if page == "judul":
+if page == "Judul":
     capstone()
 
 #Second Page
