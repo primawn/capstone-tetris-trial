@@ -15,7 +15,6 @@ choice_prov = st.sidebar.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
     ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
-st.sidebar.button('Hit me')
 hide_jkt_data_row_index = """
             <style>
             .row_heading.level0 {display:none}
@@ -23,7 +22,7 @@ hide_jkt_data_row_index = """
             </style>
             """
 st.markdown(hide_jkt_data_row_index, unsafe_allow_html=True)
-jawa_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
+jkt_data.sort_values(by=['Kabupaten/Kota'], inplace=True, ascending=True)
 
 if choice_prov == "DKI Jakarta":
          st.sidebar.table(data.jkt_data)
