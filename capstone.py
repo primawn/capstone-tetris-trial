@@ -21,10 +21,21 @@ st.write("""Latar Belakang""")
 st.write("Hidup yang menjadi lebih mudah di kemajuan teknologi ini membuat kita seringkali menjadi lalai dalam menjaga gaya hidup dan pola makan. Menurut WHO, gaya hidup yang tidak baik tersebut merupakan salah satu pemicu diabetes melitus (Kemkes, 2018), yang mana sejauh ini penderita diabetes melitus semakin bertambah banyak.")
 st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan metabolisme kronis pada tubuh (WHO, 1999). Hal ini menyebabkan tingginya kadar gula darah, terganggunya produksi insulin dalam tubuh, dan seringkali juga memberikan peluang bagi penyakit lain untuk masuk ke tubuh kita, salah satunya adalah TBC. Tuberkulosis (TBC/TB) adalah penyakit mudah menular yang disebabkan oleh infeksi bakteri, yang pada umumnya menyerang paru-paru.")
 
+chart = alt.Chart(data.datajawa, title='Jumlah penderita DM dan TB di Pulau Jawa 2020 berdasarkan Provinsi').mark_bar(
+    opacity=1,
+    ).encode(
+    column = alt.Column('date:O', spacing = 5, header = alt.Header(labelOrient = "bottom")),
+    x =alt.X('Kabupaten/Kota', sort = ["Penderita Tuberkulosis", "Penderita Diabetes"],  axis=None),
+    y =alt.Y('value:Q'),
+    color= alt.Color('variable')
+).configure_view(stroke='transparent')
+
+chart.display()
+
+
 choice_prov = st.sidebar.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
     ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
-
 
 if choice_prov == "DKI Jakarta":
          st.sidebar.table(data.jkt_data)
