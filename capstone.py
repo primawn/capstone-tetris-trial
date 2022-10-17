@@ -23,6 +23,18 @@ st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan 
 
 st.table(data.datajawa)
 
+#chart
+alt.data_transformers.disable_max_rows()
+
+np.random.seed(0)
+# data = pd.DataFrame({
+#     'Jumlah': pd.date_range('1990-01-01', freq='Y', periods=10),
+#     'FAO_yied': np.random.randn(10).cumsum(),
+#     'Simulation': np.random.randn(10).cumsum(),
+#     'Predicted': np.random.randn(10).cumsum()
+# })
+
+# data_jawa = pd.melt(data, id_vars=['date'], value_vars=['FAO_yied', 'Predicted', 'Simulation'])
 chart = alt.Chart(data.datajawa, title='Jumlah penderita DM dan TB di Pulau Jawa 2020 berdasarkan Provinsi').mark_bar(
     opacity=1,
     ).encode(
