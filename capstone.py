@@ -8,9 +8,8 @@ import data
 
 
 page_1 = open("pages/page_1.py")
-app()
-        
 page_2 = open("pages/page_2.py")
+
 #STREAMLIT
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
