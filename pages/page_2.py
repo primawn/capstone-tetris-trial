@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-
+import data
 
 
 choice_prov = st.selectbox(
