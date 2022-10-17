@@ -16,7 +16,7 @@ hide_jkt_data_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_jkt_data_row_index, unsafe_allow_html=True)
+# st.markdown(hide_jkt_data_row_index, unsafe_allow_html=True)
 
 ##DIY
 diy_data = pd.read_csv('./Capstone Project/DI_Yogya.csv', sep=';')
@@ -27,7 +27,7 @@ hide_diy_data_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_diy_data_row_index, unsafe_allow_html=True)
+# st.markdown(hide_diy_data_row_index, unsafe_allow_html=True)
 
 ##BANTEN
 banten_dm = pd.read_csv('./Capstone Project/DM_Banten.csv', sep=',')
@@ -43,7 +43,7 @@ hide_banten_data_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_banten_data_row_index, unsafe_allow_html=True)
+# st.markdown(hide_banten_data_row_index, unsafe_allow_html=True)
 
 ##JABAR
 jabar_dm = pd.read_csv('./Capstone Project/DM_Jawa_Barat.csv', sep=';')
@@ -58,7 +58,7 @@ hide_jabar_data_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_jabar_data_row_index, unsafe_allow_html=True)
+# st.markdown(hide_jabar_data_row_index, unsafe_allow_html=True)
 
 ##JATIM
 jatim_data = pd.read_csv('./Capstone Project/Jawa_Timur.csv', sep=';')
@@ -69,7 +69,7 @@ hide_jatim_data_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_jatim_data_row_index, unsafe_allow_html=True)
+# st.markdown(hide_jatim_data_row_index, unsafe_allow_html=True)
 
 ##JATENG
 jateng_data = pd.read_csv('./Capstone Project/Jawa_Tengah.csv', sep=';')
@@ -80,7 +80,7 @@ hide_jateng_data_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_jateng_data_row_index, unsafe_allow_html=True)
+# st.markdown(hide_jateng_data_row_index, unsafe_allow_html=True)
 
 ##MERGED
 jawa_1 = jkt_data.append(diy_data)
@@ -117,5 +117,5 @@ hide_datajawa_row_index = """
             .blank {display:none}
             </style>
             """
-st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
-st.table(datajawa)
+# st.markdown(hide_datajawa_row_index, unsafe_allow_html=True)
+# st.table(datajawa)
