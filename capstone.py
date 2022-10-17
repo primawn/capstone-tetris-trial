@@ -5,7 +5,7 @@ import tabulate
 import altair as alt
 import matplotlib.pyplot as mp
 import data
-import page_1
+import pages/page_1.py
 import page_2
 import capstone
 
