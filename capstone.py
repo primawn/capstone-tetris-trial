@@ -10,7 +10,7 @@ import page_2
 import capstone
 
 page_1 = execfile(pages/page_1.py)
-        app()
+app()
         
 page_2 = execfile(pages/page_2.py)
 #STREAMLIT
