@@ -34,17 +34,17 @@ np.random.seed(0)
 #     'Predicted': np.random.randn(10).cumsum()
 # })
 
-# data_jawa = pd.melt(data, id_vars=['date'], value_vars=['FAO_yied', 'Predicted', 'Simulation'])
-chart = alt.Chart(data.datajawa, title='Jumlah penderita DM dan TB di Pulau Jawa 2020 berdasarkan Provinsi').mark_bar(
-    opacity=1,
-    ).encode(
-    column = alt.Column('date:O', spacing = 5, header = alt.Header(labelOrient = "bottom")),
-    x =alt.X('Kabupaten/Kota', sort = ["Penderita Tuberkulosis", "Penderita Diabetes"],  axis=None),
-    y =alt.Y('value:Q'),
-    color= alt.Color('variable')
-).configure_view(stroke='transparent')
+# # data_jawa = pd.melt(data, id_vars=['date'], value_vars=['FAO_yied', 'Predicted', 'Simulation'])
+# chart = alt.Chart(data.datajawa, title='Jumlah penderita DM dan TB di Pulau Jawa 2020 berdasarkan Provinsi').mark_bar(
+#     opacity=1,
+#     ).encode(
+#     column = alt.Column('date:O', spacing = 5, header = alt.Header(labelOrient = "bottom")),
+#     x =alt.X('Kabupaten/Kota', sort = ["Penderita Tuberkulosis", "Penderita Diabetes"],  axis=None),
+#     y =alt.Y('value:Q'),
+#     color= alt.Color('variable')
+# ).configure_view(stroke='transparent')
 
-chart.display()
+# chart.display()
 
 choice_prov = st.sidebar.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
