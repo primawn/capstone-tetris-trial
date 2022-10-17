@@ -75,6 +75,10 @@ st.write("Meskipun memiliki jumlah penderita Diabetes tertinggi, namun jumlah pe
 
 # chart.display() 
 
+map.add_select
+map.select_data
+
+
 choice_prov = st.sidebar.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
     ('Semua Data', 'DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
