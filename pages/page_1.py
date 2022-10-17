@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 
+def app():
+    st.title('Latar Belakang')
+    st.write('Latar Belakang')
 st.write("""## Latar Belakang""")
 st.write("Hidup yang dimudahkan oleh kemajuan teknologi saat ini membuat kita seringkali menjadi lalai dalam menjaga gaya hidup dan pola makan."
          " Menurut WHO, hal-hal tersebut merupakan salah satu pemicu diabetes melitus (Kemkes, 2018), dimana penderita diabetes melitus sejauh ini semakin bertambah banyak.")
