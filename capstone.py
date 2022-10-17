@@ -23,10 +23,10 @@ st.caption("Diabetes melitus merupakan suatu penyakit yang menyebabkan gangguan 
 
 st.table(data.datajawa)
 
-#chart
-alt.data_transformers.disable_max_rows()
+# #chart
+# alt.data_transformers.disable_max_rows()
 
-np.random.seed(0)
+# np.random.seed(0)
 # data = pd.DataFrame({
 #     'Jumlah': pd.date_range('1990-01-01', freq='Y', periods=10),
 #     'FAO_yied': np.random.randn(10).cumsum(),
