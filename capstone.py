@@ -9,6 +9,8 @@ import ./pages/page_1.py
 import page_2
 import capstone
 
+page_1 = execfile(pages/page_1.py)
+        app()
 #STREAMLIT
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
