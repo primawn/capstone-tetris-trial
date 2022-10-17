@@ -5,9 +5,7 @@ import tabulate
 import altair as alt
 import matplotlib.pyplot as mp
 import data
-import page_1
-import page_2
-import capstone
+
 
 page_1 = execfile(pages/page_1.py)
 app()
