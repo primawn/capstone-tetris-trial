@@ -1,12 +1,14 @@
 import pandas as pd
 import streamlit as st
 
+
+
 choice_prov = st.selectbox(
     'Data Penderita Diabetes Melitus dan TBC berdasarkan Provinsi',
     ('DKI Jakarta','Banten','DI Yogyakarta','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
 if choice_prov == "DKI Jakarta":
-         st.table(jkt_data)
+         st.table(data.jkt_data)
 if choice_prov == "Banten":
          st.table(banten_data)
 if choice_prov == "DI Yogyakarta":
