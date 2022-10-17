@@ -18,46 +18,22 @@ st.write("Prima Widiani | Tetris Program 2022")
 #image
 st.image('./Java_blank_map.jpg')
 
+#Sidebar
+navigation = st.sidebar.selectbox(
+    'Navigasi',
+    ('Judul','Latar Belakang','Data per Provinsi','Jawa Barat','Jawa Tengah','Jawa Timur'))
 
+if navigation == "Judul":
+         st.sidebar.table(jkt_data)
+if navigation == "Banten":
+         st.sidebar.table(banten_data)
+if navigation == "DI Yogyakarta":
+         st.sidebar.table(diy_data)
+if navigation == "Jawa Barat":
+         st.sidebar.table(jabar_data)
+if navigation == "Jawa Tengah":
+         st.sidebar.table(jateng_data)
+if navigation == "Jawa Timur":
+         st.sidebar.table(jatim_data)
+         
 
-#SIDEBAR
-def main():
-    page = st.sidebar.selectbox(
-        "Navigasi",
-        [
-            "Judul",
-            "Latar Belakang",
-            "Data per Provinsi",
-            "Scatter Plot",
-            "Histogram",
-            "Pie Chart",
-            "Sub Plot"
-        ]
-    )
-
-#First Page
-if page == "Judul":
-    capstone()
-
-#Second Page
-elif page == "Latar Belakang":
-    page_1()
-    
-#Third Page
-elif page == "Data per Provinsi":
-    page_2()
-
-#Fourth Page
-elif page == "Scatter Plot":
-    scatter_plot()
-    
-#Fifth page
-elif page == "Histogram":
-    histogram()
-    
-#Sixth Page
-elif page == "Pie Chart":
-    pieChart()
-
-elif page == "Sub Plot":
-    subPlot()
