@@ -1,3 +1,4 @@
+from turtle import width
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -11,12 +12,29 @@ import map
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
 st.write("Prima Widiani | Tetris Program 2022")
 
+# df = pd.DataFrame(data.datajawa)
+# df = df.set_index('Provinsi')
 chart_data = pd.DataFrame(
     data.datajawa,
-    columns=["Penderita Tuberkulosis", "Penderita Diabetes"])
+    columns=["Penderita Tuberkulosis", "Penderita Diabetes"],
+    index=data.datajawa['Provinsi']    
+)
 
 st.bar_chart(chart_data)
 
+# data = pd.melt(chart_data.reset_index(), id_vars=["index"])
+# chart = (
+#     alt.Chart(data)
+#     .mark_bar()
+#     .encode(
+#         x=alt.X("value", type="quantitative", title=""),
+#         y=alt.Y("index", type="nominal", title=""),
+#         color=alt.Color("variable", type="nominal", title=""),
+#         order=alt.Order("variable", sort="descending"),
+#     )
+# )
+
+# st.altair_chart(chart, use_container_width=True)
 #image
 # st.image('./Java_blank_map.jpg')
 # st.write(data_all['Provinsi'])
