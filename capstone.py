@@ -5,12 +5,14 @@ import tabulate
 import altair as alt
 import matplotlib.pyplot as mp
 import data
-import ./pages/page_1.py
+import page_1
 import page_2
 import capstone
 
 page_1 = execfile(pages/page_1.py)
         app()
+        
+page_2 = execfile(pages/page_2.py)
 #STREAMLIT
 #Create header
 st.write("""# Hubungan Prevalensi Diabetes Melitus dengan Prevalensi TB Paru di Pulau Jawa Tahun 2020""")
